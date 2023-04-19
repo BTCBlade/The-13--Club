@@ -1,0 +1,18 @@
+make a .env file that looks something like this
+PORT=5000
+DB_USERNAME=opbetsmvp_dev
+DB_PASSWORD=password
+DB_DATABASE=opbetsmvp_db
+DB_HOST=localhost
+JWT_SECRET=LPT4/r/cQqdpCA==
+JWT_EXPIRES_IN=604800
+
+
+use psql to create a user -
+psql -c "CREATE USER <username> PASSWORD '<password>' CREATEDB"
+
+then
+npx dotenv sequelize db:create
+***if somehow that doesnt work***
+psql, then once in shell
+CREATE DATABASE <dbname> OWNER <DB_USERNAME>;
